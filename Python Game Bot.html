@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Game Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #282828;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+			padding-bottom: 50px;
+			padding-top: 50px;
+        }
+
+		.button {                
+			border: none;
+			border-radius: 25px; 
+			color: rgb(45, 45, 45);
+			padding: 1vw 3vw;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+			font-family: 'Montserrat', 'Poppins', sans-serif;
+			font-weight: 500;
+			margin: 40px auto;
+			cursor: pointer;
+			width: 70vw;
+			max-width: 600px;
+			min-width: 600px; 
+			transition: background-color 0.3s, transform 0.3s;
+		}
+
+
+		.button:active {background-color: #000000;transform: scale(0.90); }
+        .buttonHalf:active {background-color: #000000;transform: scale(0.90); }
+
+
+		.button0:hover {background-color: #ffffff; color: rgb(0, 0, 0); transform: scale(0.95); }
+		.button0 { background-color: #262626; color: rgb(255, 255, 255); }
+		
+		@media (max-width: 600px) {
+			.button {
+				font-size: 5vw;
+				padding: 1.5vw 4vw;
+				min-width: 90vw;
+			}
+		}
+
+		.image-box.wide img {
+			aspect-ratio: unset;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+		
+		.image-box.wide img.expanded {
+			transform: scale(1.5);
+		}
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px auto;
+        }
+		.frame {
+			justify-content: center;
+            width: 430px;
+			background-color: black;
+			border-radius: 15px;
+		}
+		.rowtt {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+            margin-bottom: 40px;
+		}
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            text-align: left;
+            background-color: #000;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .image-box.wide {
+            max-width: 850px; 
+        }
+        .image-box.wide img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .image-box.high {
+            max-width: 400px;
+        }
+        .image-box.high img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .text-content {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .text {font-family: 'Montserrat', 'Poppins', sans-serif;}
+        .header {font-size: 2em; font-weight: 700; margin: 20px 0; text-align: center; }
+        .s16 {font-size: 1.6em;  margin: 0 0 5px; }
+        .s14 {font-size: 1.4em;  margin: 0 0 5px; }
+        .s12 {font-size: 1.2em;  margin: 0 0 5px; }
+        .s10 {font-size: 1.0em;  margin: 0; }
+        .s8  {font-size: 0.8em;  margin: 0; }
+        .s6  {font-size: 0.6em;  margin: 0; }
+
+
+        @media (max-width: 840px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-box {
+                max-width: 100%;
+                text-align: left;
+            }
+            .image-box.wide {
+                max-width: 100%;
+            }
+            .text-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text header">Python Game Bot</div>
+    <div class="container">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">AutoAthenaPro by PZ</div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Python and Supabase</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/D95X3ktErYQ"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12" >Function</div>
+                    <div class="text s12">ㆍSecurity System: It will be activated when the key and serial motherboard match the information in Supabase.</div>
+                    <div class="text s12">ㆍDisable when key expires.</div>
+                    <div class="text s12">ㆍUsers can set round from 1 to 5 round.</div>                    
+                    <div class="text s12">ㆍAutomatic growth/harvest, press without competing for the cursor.</div>
+                    <div class="text s12">ㆍAuto quit when finished, empty seeds, full apples.</div>
+                    <div class="text s12">ㆍAuto eat food and cocktails when the food bar or brain bar is red.</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">AUTO CONNECT 7 & LOG ON DISCORD</div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/HtEJbijeUMw"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12" >Function</div>
+                    <div class="text s12">
+                            ㆍ [AUTO] ReConnect when [ServerRestart, TimedOut, ConnectFail3Attempts]
+                        <br>ㆍ [AUTO] Daily Login and Log Items when connect on 00:00
+                        <br>ㆍ [AUTO] Join Bomb/Flag and Go Back To AFK Zone
+                        <br>ㆍ [AUTO] Check Online Players when Gang Time
+                        <br>ㆍ [COMMAND] ID to Show ID
+                        <br>ㆍ [COMMAND] AFK to Show AFK Coin
+                        <br>ㆍ [COMMAND] Restart to Restart Script
+                        <br>ㆍ [COMMAND] Code to Redeem Code and Log Items
+                        <br>ㆍ [COMMAND] GETMAIL to Get All Items In MailBox and Log Items</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">AutoDeepFish BLUE by PZ</div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/Mjg_9KiUEmU"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12" >Function</div>
+                    <div class="text s12">ㆍAuto used item when mini game not found.</div>
+                    <div class="text s12">ㆍUsers can set item slot number.</div>                    
+                    <div class="text s12">ㆍAuto press Space bar when the colors overlap.</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">AutoFish Hyper by PZ</div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/09Dsikqb9Pw"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12" >Function</div>                  
+                    <div class="text s12">ㆍAuto press Space bar when the colors overlap.</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">AutoFish for DOW by PZ</div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/J9C8G7PBFcU"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12" >Function</div>
+                    <div class="text s12">ㆍAuto press key when a mini-game is detected</div>                   
+                    <div class="text s12">ㆍAuto press Space bar when the color bars overlap.</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+
+
+    </div>
+
+	<script>
+        function toggleExpand(img) {
+            img.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

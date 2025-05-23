@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #282828;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+			padding-bottom: 50px;
+			padding-top: 50px;
+        }
+
+		.button {                
+			border: none;
+			border-radius: 25px; 
+			color: rgb(45, 45, 45);
+			padding: 1vw 3vw;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+			font-family: 'Montserrat', 'Poppins', sans-serif;
+			font-weight: 500;
+			margin: 40px auto;
+			cursor: pointer;
+			width: 70vw;
+			max-width: 600px;
+			min-width: 600px; 
+			transition: background-color 0.3s, transform 0.3s;
+		}
+
+
+		.button:active {background-color: #000000;transform: scale(0.90); }
+        .buttonHalf:active {background-color: #000000;transform: scale(0.90); }
+
+
+		.button0:hover {background-color: #ffffff; color: rgb(0, 0, 0); transform: scale(0.95); }
+		.button0 { background-color: #262626; color: rgb(255, 255, 255); }
+		
+		@media (max-width: 600px) {
+			.button {
+				font-size: 5vw;
+				padding: 1.5vw 4vw;
+				min-width: 90vw;
+			}
+		}
+
+		.image-box.wide img {
+			aspect-ratio: unset;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+		
+		.image-box.wide img.expanded {
+			transform: scale(1.5);
+		}
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px auto;
+        }
+		.frame {
+			justify-content: center;
+            width: 430px;
+			background-color: black;
+			border-radius: 15px;
+		}
+		.rowtt {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+            margin-bottom: 40px;
+		}
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            text-align: left;
+            background-color: #000;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .image-box.wide {
+            max-width: 850px; 
+        }
+        .image-box.wide img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .image-box.high {
+            max-width: 400px;
+        }
+        .image-box.high img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .text-content {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .text {font-family: 'Montserrat', 'Poppins', sans-serif;}
+        .header {font-size: 2em; font-weight: 700; margin: 20px 0; text-align: center; }
+        .s16 {font-size: 1.6em;  margin: 0 0 5px; }
+        .s14 {font-size: 1.4em;  margin: 0 0 5px; }
+        .s12 {font-size: 1.2em;  margin: 0 0 5px; }
+        .s10 {font-size: 1.0em;  margin: 0; }
+        .s8  {font-size: 0.8em;  margin: 0; }
+        .s6  {font-size: 0.6em;  margin: 0; }
+
+
+        @media (max-width: 840px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-box {
+                max-width: 100%;
+                text-align: left;
+            }
+            .image-box.wide {
+                max-width: 100%;
+            }
+            .text-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text header">Python Project</div>
+    <div class="container">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Google Sheets Data To HTML File</div>
+                    <div class="text s12">ㆍRole: Get HTML Templates and Product Data to Create HTML File</div>
+                    <div class="text s12">ㆍUsing Python and Google Sheets</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://drive.google.com/file/d/1jif8pgvB4NbO3EAEH9JjvCrSyvKMEwVr/preview"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12">Put product data into Google Sheets, then run Python 
+                        <br>to generate a template-based HTML file.</Template></div>
+                    <br>
+                    <div class="text s12" >ㆍ2 Projects</div>
+                    <div class="text s12">ㆍ I Herb U [ Create HTML file with template and 177 OTOP product data. ]</div>
+                    <div class="text s12">ㆍ JubJaai.com [ Create HTML file with template and 174 OTOP product data. ]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Text Code Data To QR-Code Ticket</div>
+                    <div class="text s12">ㆍRole: Get Artwork Templates and Text Code Data to Create QR-Code Ticket</div>
+                    <div class="text s12">ㆍUsing Python and Photo Scape X</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/wxP4jSHY/tkc.gif">
+                <div class="text-content">
+                    <div class="text s12">Use Python to convert Text Code Data to QR-Code Photo 
+                        <br>than Use Python to increase the image size to be equal to Artwork Templates 
+                        <br>and then render together to QR-Code Ticket with Photo Scape X.</Template></div>
+                    <br>
+                    <div class="text s12" >ㆍ3 Projects</div>
+                    <div class="text s12">ㆍ Singing in the Rain 5 [ 1,000 Tickets ]</div>
+                    <div class="text s12">ㆍ Singing in the Rain 5 [ 1,000 Tickets ]</div>
+                    <div class="text s12">ㆍ Season of Love Song 13 [ 5,000 Tickets ]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Zone,Row,Seat Data To Ticket</div>
+                    <div class="text s12">ㆍRole: Get Artwork and Zone,Row,Seat Data to Create Artwork Templates and Ticket</div>
+                    <div class="text s12">ㆍUsing Python, Photo Scape X and GIMP</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/J4k6DP4D/tk4.png">
+                <div class="text-content">
+                    <div class="text s12">Use Python to Create Zone,Row,Seat Photo 
+                        <br>than Use Python to increase the image size to be equal to Artwork Templates 
+                        <br>and then render together to QR-Code Ticket with Photo Scape X.</Template></div>
+                    <br>
+                    <div class="text s12" >ㆍ1 Project</div>
+                    <div class="text s12">ㆍ เฉลียง Rare Item [ 180 Tickets ]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Sorting Tickets with Discord Chat Bot</div>
+                    <div class="text s12">ㆍRole: Create Discord Chat Bot</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/85Lm8cCz/discord-Qr.png">
+                <div class="text-content">
+                    <div class="text s12">Use Python to create a Discord Chat Bot to read QR-Code on massage image
+                        <br>and convert QR-Code to code and data number tags.</Template></div>
+                    <br>
+                    <div class="text s12" >ㆍ1 Project</div>
+                    <div class="text s12">ㆍ Data Sorting Singing in the Rain 5 [ 1,000 Tickets Data ]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Sentiment Analysis Backend</div>
+                    <div class="text s12">ㆍRole: Data Preparation, Word Segmentation</div>
+                    <div class="text s12">ㆍUsing Python</div>
+                    <br>
+                    <div class="text s12">Product review data is entered into the Data Preparation, Word Segmentation 
+                        <br>processes to obtain quality data for training the Sentiment Analysis model 
+                        <br>to predict whether the text is positive or negative.</Template></div>
+                    <br>
+                    <div class="text s12" >Data Preparation, Word Segmentation</div>
+                    <div class="text s12">ㆍ Delete rows if data is Null or duplicate using PANDAS</div>
+                    <div class="text s12">ㆍ Filter URLs from data using Regular Expression</div>
+                    <div class="text s12">ㆍ Last step in data cleaning is to fix typos or irregularities using pyspellchecker.</div>
+                    <div class="text s12">ㆍ Convert text that is a sentence into words using wordsegment.</div>
+                    <div class="text s12">ㆍ Delete stop word to filter out words that are not necessary for analysis using NLTK.</div>
+                </div>
+                <a href="https://drive.google.com/file/d/10q6HarYjc7Brm5KQMT60Au-WAb-l-i5L/view" target="_blank" class="button button0">View More</a>
+                
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+    </div>
+
+	<script>
+        function toggleExpand(img) {
+            img.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #282828;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+			padding-bottom: 50px;
+			padding-top: 50px;
+        }
+
+		.button {                
+			border: none;
+			border-radius: 25px; 
+			color: rgb(45, 45, 45);
+			padding: 1vw 3vw;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 3vw;
+			font-family: 'Montserrat', 'Poppins', sans-serif;
+			font-weight: 500;
+			margin: 40px auto;
+			cursor: pointer;
+			width: 70vw;
+			max-width: 800px;
+			min-width: 700px; 
+			transition: background-color 0.3s, transform 0.3s;
+		}
+
+        .buttonHalf {
+            width: 15vw;
+            max-width: 350px;
+            min-width: 350px;
+            font-size: 1.5vw;
+            font-weight: 90;
+            display: inline-flex;
+            margin: 10px 10px; 
+        }
+
+
+		.button:active {background-color: #000000;transform: scale(0.90); }
+        .buttonHalf:active {background-color: #000000;transform: scale(0.90); }
+
+        .button0:hover {background-color: #ffffff; color: rgb(14, 14, 14); transform: scale(0.95); }
+        .button0 {background-color: #0a0a0a;color: rgb(255, 255, 255);}
+		
+		@media (max-width: 600px) {
+			.button {
+				font-size: 5vw;
+				padding: 1.5vw 4vw;
+				min-width: 90vw;
+			}
+		}
+        .button-container {
+            display: flex;
+            justify-content: center; /* จัดกึ่งกลางแนวนอน */
+            flex-wrap: wrap; /* อนุญาตให้ปุ่มตกลงบรรทัดใหม่ถ้าจอเล็กเกินไป */
+            padding-bottom: 20px;
+        }
+
+		.image-box.wide img {
+			aspect-ratio: unset;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+		
+		.image-box.wide img.expanded {
+			transform: scale(1.5);
+		}
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px auto;
+        }
+		.frame {
+			justify-content: center;
+            width: 430px;
+			background-color: black;
+			border-radius: 15px;
+		}
+		.rowtt {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+            margin-bottom: 40px;
+		}
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            text-align: left;
+            background-color: #000000;
+            padding: 15px;
+            border-radius: 20px;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .image-box.wide {
+            max-width: 850px; 
+        }
+        .image-box.wide img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .image-box.high {
+            max-width: 400px;
+        }
+        .image-box.high img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .text-content {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .text {font-family: 'Montserrat', 'Poppins', sans-serif;}
+        .header {font-size: 2em; font-weight: 700; margin: 20px 0; text-align: center; }
+        .s16 {font-size: 1.6em;  margin: 0 0 5px; }
+        .s14 {font-size: 1.4em;  margin: 0 0 5px; }
+        .s12 {font-size: 1.2em;  margin: 0 0 5px; }
+        .s10 {font-size: 1.0em;  margin: 0; }
+        .s8  {font-size: 0.8em;  margin: 0; }
+        .s6  {font-size: 0.6em;  margin: 0; }
+
+
+        @media (max-width: 840px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-box {
+                max-width: 100%;
+                text-align: left;
+            }
+            .image-box.wide {
+                max-width: 100%;
+            }
+            .text-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text header">Hero Guide</div>
+    <div class="container">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text s14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hero Guide พัฒนาขึ้นเพื่อสร้างรูปภาพที่ใช้สอนการใช้ไอเท็ม รูน สเปล และพลังแฝง 
+                        ให้เหมาะสมกับฮีโร่ในเกม Arena of Valor และเนื่องจากฮีโร่ในเกมมีจำนวนมาก (ปัจจุบันมีทั้งหมด 111 ฮีโร่) 
+                        การใช้โปรแกรมแก้ไขรูปภาพทั่วไปเพื่อสร้างรูปภาพสอนแนวทางของแต่ละฮีโร่จะใช้เวลาที่นานมาก โปรแกรม Hero Guide 
+                        จะช่วยให้ใช้เวลาได้สั้นลงและสะดวกมากขั้น<br><br>
+                    </div>
+                    <div class="text s14">ㆍVersions</div>
+                    <div class="text s12">ㆍHero Guide 2022 [Release]</div>
+                    <div class="text s12">ㆍHero Guide 2021 [Release]</div>
+                    <div class="text s12">ㆍHero Guide 2020 [Release]</div>
+                    <div class="text s12">ㆍHero Guide 2023 [Prototype]<br><br></div>
+                </div>
+                <img src="https://i.postimg.cc/1zW5hqFZ/ggg.png" onclick="toggleExpand(this)">
+                <div class="text-content">
+                    <div class="text s12">ㆍRole: Start to finish Project</div>
+                    <div class="text s12">ㆍUsing Adobe Animate, Adobe After Effect, Action Script 3.0, GIMP, PhotoScape X</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Hero Guide 2022</div>
+                    <div class="text s14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พัฒนาต่อมาจาก Hero Guide 2021 ปรับปรุงดีไซน์ใหม่ ในธีม Sci-Fi จัดระเบียบหมวดหมู่ฮีโร่ และสามารถเลือกสกินของแต่ละฮีโร่ได้<br><br>
+                    </div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Adobe Animate, Adobe After Effect, Action Script 3.0, GIMP, PhotoScape X</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/GAY5rc-Q2zk"
+                    width="850" height="500" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s14" >Update</div>
+                    <div class="text s12">ㆍUI ดีไซน์ใหม่ ธีม Sci-Fi</div>
+                    <div class="text s12">ㆍเพิ่มการจัดระเบียบหมวดหมู่ฮีโร่ และเพิ่มชื่อฮีโร่แต่ละตัวในหน้าหมวดหมู่</div>
+                    <div class="text s12">ㆍสามารถเลือกสกินของแต่ละฮีโร่ได้</div>
+                    <div class="text s12">ㆍเพิ่มฮีโร่เป็น 111 ฮีโร่ จากเดิม 109 ฮีโร่ </div>
+                    <br>
+                    <div class="text s14" >Function</div>
+                    <div class="text s12">ㆍสามารถเลือกฮีโร่ได้ 111 ฮีโร่ และเลือกสกินได้ 474 สกิน</div>
+                    <div class="text s12">ㆍสามารถเลือกไอเท็มได้ 107 ชิ้น</div>
+                    <div class="text s12">ㆍสามารถเลือกรูนได้ 30 ชิ้น [RUNE🔴:10 , RUNE🟣:10 , RUNE🟢:10]</div>
+                    <div class="text s12">ㆍสามารถปรับรูปแบบและจำนวนของรูนได้
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 1] RUNE🔴 1 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 2] RUNE🔴 2 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 3] RUNE🔴 1 , RUNE🟣 2 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 4] RUNE🔴 2 , RUNE🟣 2 , RUNE🟢 1 </div>
+                    <div class="text s12">ㆍสามารถเลือกสเปลได้ 10 ชนิด</div>
+                    <div class="text s12">ㆍสามารถเลือกพลังแฝงได้ทั้ง 3 ขั้น [ขั้นที่ 1: 12 ชนิด] [ขั้นที่ 2: 8 ชนิด] [ขั้นที่ 3: 11 ชนิด]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Hero Guide 2021</div>
+                    <div class="text s14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พัฒนาต่อมาจาก Hero Guide 2020 ปรับปรุงจากโปรแกรมที่ใช้สำหรับสร้างรูปภาพ ให้เป็นโปรแกรมที่ใช้สอนในวีดีโอ<br><br>
+                    </div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Adobe Animate, Adobe After Effect, Action Script 3.0, GIMP, PhotoScape X</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/3b9PvFUMolY"
+                    width="850" height="500" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s14" >Update</div>
+                    <div class="text s12">ㆍUI ดีไซน์ใหม่จากเดิมเป็นครึ่งหน้าจอ ถูกแก้ไขให้เต็มหน้าจอ สำหรับใช้ในงานวีดีโอ</div>
+                    <div class="text s12">ㆍเพิ่มค่าเริ่มต้นเป็นค่าว่างให้กับ รูน สเปล และพลังแฝง เพื่อป้องกันไม่ให้ผู้ชมเข้าใจผิด</div>
+                    <div class="text s12">ㆍพลังแฝงจากเดิมขั้นที่ 1 และ 2 อยู่ใน Symbol เดียวกัน ถูกแยกให้เป็น 2 Symbol สำหรับแต่ละขั้น</div>
+                    <div class="text s12">ㆍเพิ่มฮีโร่เป็น 109 ฮีโร่ จากเดิม 108 ฮีโร่ </div>
+                    <div class="text s12">ㆍเพิ่มไอเท็มเป็น 107 ชิ้น จากเดิม 68 ชิ้น </div>
+                    <br>
+                    <div class="text s14" >Function</div>
+                    <div class="text s12">ㆍสามารถเลือกฮีโร่ได้ 109 ฮีโร่</div>
+                    <div class="text s12">ㆍสามารถเลือกไอเท็มได้ 107 ชิ้น</div>
+                    <div class="text s12">ㆍสามารถเลือกรูนได้ 30 ชิ้น [RUNE🔴:10 , RUNE🟣:10 , RUNE🟢:10]</div>
+                    <div class="text s12">ㆍสามารถปรับรูปแบบและจำนวนของรูนได้
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 1] RUNE🔴 1 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 2] RUNE🔴 2 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 3] RUNE🔴 1 , RUNE🟣 2 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 4] RUNE🔴 2 , RUNE🟣 2 , RUNE🟢 1 </div>
+                    <div class="text s12">ㆍสามารถเลือกสเปลได้ 10 ชนิด</div>
+                    <div class="text s12">ㆍสามารถเลือกพลังแฝงได้ทั้ง 3 ขั้น [ขั้นที่ 1: 12 ชนิด] [ขั้นที่ 2: 8 ชนิด] [ขั้นที่ 3: 11 ชนิด]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Hero Guide 2020</div>
+                    <div class="text s14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พัฒนาขึ้นเพื่อสร้างรูปภาพที่ใช้สอนการใช้ไอเท็ม รูน สเปล และพลังแฝง ให้เหมาะสมกับฮีโร่ในเกม Arena of Valor <br><br>
+                    </div>
+                    <div class="text s12">ㆍRole: Start to finish project</div>
+                    <div class="text s12">ㆍUsing Adobe Animate, Adobe After Effect, Action Script 3.0, GIMP, PhotoScape X</div>
+                    <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://www.youtube.com/embed/7cOPW4tb2as"
+                    width="850" height="500" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s14" >Function</div>
+                    <div class="text s12">ㆍสามารถเลือกฮีโร่ได้ 108 ฮีโร่</div>
+                    <div class="text s12">ㆍสามารถเลือกไอเท็มได้ 68 ชิ้น</div>
+                    <div class="text s12">ㆍสามารถเลือกรูนได้ 30 ชิ้น [RUNE🔴:10 , RUNE🟣:10 , RUNE🟢:10]</div>
+                    <div class="text s12">ㆍสามารถปรับรูปแบบและจำนวนของรูนได้
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 1] RUNE🔴 1 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 2] RUNE🔴 2 , RUNE🟣 1 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 3] RUNE🔴 1 , RUNE🟣 2 , RUNE🟢 1 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;[รูปแบบที่ 4] RUNE🔴 2 , RUNE🟣 2 , RUNE🟢 1 </div>
+                    <div class="text s12">ㆍสามารถเลือกสเปลได้ 10 ชนิด</div>
+                    <div class="text s12">ㆍสามารถเลือกพลังแฝงได้ทั้ง 3 ขั้น [ขั้นที่ 1: 12 ชนิด] [ขั้นที่ 2: 8 ชนิด] [ขั้นที่ 3: 11 ชนิด]</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Hero Guide 2023 Prototype UI</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/kX0vdVmz/UI.png">
+                <div class="text-content">
+                    <div class="text s12">ㆍRole: Start to finish UI Theme</div>
+                    <div class="text s12">ㆍUsing GIMP, PhotoScape X</div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Feedback</div>
+                </div>
+                <img src="https://i.postimg.cc/HxgNWZCG/feedback.png" onclick="toggleExpand(this)">
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Overall</div>
+                </div>
+                <img src="https://i.postimg.cc/yxWy7cW4/spec.png" onclick="toggleExpand(this)">
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+    </div>
+
+	<script>function toggleExpand(img) {img.classList.toggle('expanded');}</script>
+</body>
+</html>

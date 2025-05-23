@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #282828;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+			padding-bottom: 50px;
+			padding-top: 50px;
+        }
+
+		.button {                
+			border: none;
+			border-radius: 25px; 
+			color: rgb(45, 45, 45);
+			padding: 1vw 3vw;
+			text-decoration: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 3vw;
+			font-family: 'Montserrat', 'Poppins', sans-serif;
+			font-weight: 500;
+			margin: 40px auto;
+			cursor: pointer;
+			width: 70vw;
+			max-width: 800px;
+			min-width: 700px; 
+			transition: background-color 0.3s, transform 0.3s;
+		}
+
+        .buttonHalf {
+            width: 15vw;
+            max-width: 350px;
+            min-width: 350px;
+            font-size: 1.5vw;
+            font-weight: 90;
+            display: inline-flex;
+            margin: 10px 10px; 
+        }
+
+
+		.button:active {background-color: #000000;transform: scale(0.90); }
+        .buttonHalf:active {background-color: #000000;transform: scale(0.90); }
+
+        .button0:hover {background-color: #ffffff; color: rgb(14, 14, 14); transform: scale(0.95); }
+        .button0 {background-color: #0a0a0a;color: rgb(255, 255, 255);}
+		
+		@media (max-width: 600px) {
+			.button {
+				font-size: 5vw;
+				padding: 1.5vw 4vw;
+				min-width: 90vw;
+			}
+		}
+        .button-container {
+            display: flex;
+            justify-content: center; /* จัดกึ่งกลางแนวนอน */
+            flex-wrap: wrap; /* อนุญาตให้ปุ่มตกลงบรรทัดใหม่ถ้าจอเล็กเกินไป */
+            padding-bottom: 20px;
+        }
+
+		.image-box.wide img {
+			aspect-ratio: unset;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+		
+		.image-box.wide img.expanded {
+			transform: scale(1.5);
+		}
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px auto;
+        }
+		.frame {
+			justify-content: center;
+            width: 430px;
+			background-color: black;
+			border-radius: 15px;
+		}
+		.rowtt {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+            margin-bottom: 40px;
+		}
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .image-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            text-align: left;
+            background-color: #000000;
+            padding: 15px;
+            border-radius: 20px;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        .image-box.wide {
+            max-width: 850px; 
+        }
+        .image-box.wide img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .image-box.high {
+            max-width: 400px;
+        }
+        .image-box.high img {
+            aspect-ratio: unset;
+            object-fit: contain;
+        }
+        .text-content {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .text {font-family: 'Montserrat', 'Poppins', sans-serif;}
+        .header {font-size: 2em; font-weight: 700; margin: 20px 0; text-align: center; }
+        .s16 {font-size: 1.6em;  margin: 0 0 5px; }
+        .s14 {font-size: 1.4em;  margin: 0 0 5px; }
+        .s12 {font-size: 1.2em;  margin: 0 0 5px; }
+        .s10 {font-size: 1.0em;  margin: 0; }
+        .s8  {font-size: 0.8em;  margin: 0; }
+        .s6  {font-size: 0.6em;  margin: 0; }
+
+
+        @media (max-width: 840px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-box {
+                max-width: 100%;
+                text-align: left;
+            }
+            .image-box.wide {
+                max-width: 100%;
+            }
+            .text-content {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text header">Analysis</div>
+    <div class="container">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Commu Ticket System</div>
+                    <div class="text s14">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ทดสอบการทำงานของ Commu Ticket สร้าง Flow Chart, 
+                        ลงไปทดสอบในหน้างานจริง, วิเคราะห์จุดอ่อนของระบบ, 
+                        และจัดทำเอกสาร FIX Commu Ticket ในส่วนที่ต้องแก้ไขสำหรับผู้ใช้ทั่วไปและผู้ดูแลให้กับ Project Manager<br><br>
+                    </div>
+                    <div class="text s12">ㆍRole: System Analysis</div>
+                    <div class="text s12">ㆍUsing Drow.io, Microsoft Word</div>
+                    <br>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+
+
+        <div class="row">
+            <div class="image-box high">
+                <div class="elementor-widget-wrap"><iframe src="https://drive.google.com/file/d/1b-15BG5Quvs4q_ua7LcSazudKrqXFsJe/preview"
+                    width="395" height="360"  style="border:none;overflow:hidden;border-radius: 15px" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12">เอกสาร FIX Commu Ticket</div>
+                    <div class="text s10">ㆍUsing Microsoft Word</div>
+                </div>
+            </div>
+            <div class="image-box high">
+                <img src="https://i.postimg.cc/SRQsDq2N/drowio.png" onclick="toggleExpand(this)">
+                <div class="text-content">
+                    <div class="text s12">Flow Chart Commu Ticket</div>
+                    <div class="text s10" >ㆍUsing Drow.io</div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 65%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Singing in the Rain 5 Summary</div>
+                    <div class="text s12">
+                        วิเคราะห์ข้อมูลยอดบัตร Singing in the Rain 5
+                        <br>ㆍจำนวนยอดบัตรที่ขายทั้งหมด 
+                        <br>ㆍยอดบัตรขายที่มางาน/ไม่มางาน 
+                        <br>ㆍยอดบัตรที่แจกทั้งหมด 
+                        <br>ㆍยอดบัตรแจกที่มางาน/ไม่มางาน 
+                        <br>ㆍยอดบัตรแจกที่มางานจากสปอนเซอร์
+                        <br>ㆍตรวจสอบบัตรยอดบัตรที่เหลือ สรุปข้อมูลและคืนบัตรให้กับฝ่ายบัญชี
+                        <br><br>
+                    </div>
+                </div>
+                <img src="https://i.postimg.cc/15BvXKck/b1-72x-8.png" onclick="toggleExpand(this)">
+                <div class="text-content">
+                    <div class="text s12">ㆍRole: Data Analysis</div>
+                    <div class="text s12">ㆍUsing Google Sheets</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 65%; margin-top: 50px; margin-bottom: 50px;">
+        <!-- =====================================================================================================-->
+        <div class="row">
+            <div class="image-box wide">
+                <div class="text-content">
+                    <div class="text header">Season of Love Song 13 Ticket</div>
+                    <div class="text s10">
+                        ดูแลข้อมูลยอดขายบัตร Season of Love Song 13
+                        ออกแบบตาราง Google Sheet สำหรับสรุปข้อมูล
+                        <br>ㆍหน้า Input ใช้สำหรับนำข้อมูลยอดขายที่ Export จาก Line มาวาง
+                        <br>ㆍหน้า All Order จะดึงข้อมูลมาจากหน้า Input แสดงเฉพาะ Order Number, Name, Phone, Promotion,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp; วิธีจัดส่ง, Order Amount, Ticket Type, Ticket Amount
+                        <br>ㆍVIP โดยจะดึงข้อมูลจากหน้า All Order เฉพาะ Ticket Type ที่เป็น VIP
+                        <br>ㆍEarly Sheep โดยจะดึงข้อมูลจากหน้า All Order เฉพาะ Promotion ที่เป็น Early Sheep
+                        <br>ㆍหน้ารับบัตร โดยจะดึงข้อมูลจากหน้า All Order เฉพาะวิธีการจัดส่งที่เป็น รับบัตร
+                        <br>ㆍหน้ารับบัตรหน้างาน โดยจะดึงข้อมูลจากหน้า All Order เฉพาะวิธีการจัดส่งที่เป็น รับบัตรหน้างาน
+                        <br>ㆍหน้าSummary เป็นตารางสรุปยอดต่าง ๆ เช่น Ticket Amount, Order Amount, Price ของแต่ละ Promotion 
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;และยอด Ticket Amount, โดยจะดึงข้อมูลจากหน้า All Order มาคำนวณ
+                        <br><br>
+                    </div>
+                </div>
+                <img src="https://i.postimg.cc/3whgXB0Z/SOLS13.png" onclick="toggleExpand(this)">
+                <div class="text-content">
+                    <div class="text s12">ㆍRole: Data Analysis</div>
+                    <div class="text s12">ㆍUsing Google Sheets</div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- =====================================================================================================-->
+    </div>
+
+	<script>function toggleExpand(img) {img.classList.toggle('expanded');}</script>
+</body>
+</html>

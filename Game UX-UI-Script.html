@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Pors Battlefolk 2017</title>
+    <title>Game UX/UI & Script</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -28,33 +28,24 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 3vw;
+			font-size: 2vw;
 			font-family: 'Montserrat', 'Poppins', sans-serif;
 			font-weight: 500;
 			margin: 40px auto;
 			cursor: pointer;
 			width: 70vw;
-			max-width: 800px;
-			min-width: 700px; 
+			max-width: 600px;
+			min-width: 600px; 
 			transition: background-color 0.3s, transform 0.3s;
 		}
-
-        .buttonHalf {
-            width: 15vw;
-            max-width: 350px;
-            min-width: 350px;
-            font-size: 1.5vw;
-            font-weight: 90;
-            display: inline-flex;
-            margin: 10px 10px; 
-        }
 
 
 		.button:active {background-color: #000000;transform: scale(0.90); }
         .buttonHalf:active {background-color: #000000;transform: scale(0.90); }
 
-        .button0:hover {background-color: #ffffff; color: rgb(14, 14, 14); transform: scale(0.95); }
-        .button0 {background-color: #0a0a0a;color: rgb(255, 255, 255);}
+
+		.button0:hover {background-color: #ffffff; color: rgb(0, 0, 0); transform: scale(0.95); }
+		.button0 { background-color: #262626; color: rgb(255, 255, 255); }
 		
 		@media (max-width: 600px) {
 			.button {
@@ -63,12 +54,6 @@
 				min-width: 90vw;
 			}
 		}
-        .button-container {
-            display: flex;
-            justify-content: center; /* จัดกึ่งกลางแนวนอน */
-            flex-wrap: wrap; /* อนุญาตให้ปุ่มตกลงบรรทัดใหม่ถ้าจอเล็กเกินไป */
-            padding-bottom: 20px;
-        }
 
 		.image-box.wide img {
 			aspect-ratio: unset;
@@ -100,7 +85,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
         .image-box {
@@ -108,9 +93,10 @@
             min-width: 200px;
             max-width: 400px;
             text-align: left;
-            background-color: #282828;
+            background-color: #000;
             padding: 15px;
             border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .image-box img {
             width: 100%;
@@ -166,41 +152,86 @@
     </style>
 </head>
 <body>
-    <div class="text header">Star Pors Battlefolk 2017</div>
+    <div class="text header">Game UX/UI & Script</div>
     <div class="container">
 
         <!-- =====================================================================================================-->
         <div class="row">
             <div class="image-box wide">
                 <div class="text-content">
-                    <div class="text s16">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        โปรเจคเกมแรกที่พัฒนาด้วย Adobe Flash และเนื่องจากเกมแฟรชทั่วไปมักเป็นเกม 2D 
-                        จึงออกแบบเกมให้เป็น 2.5D โดยใช้ดราฟฉากเกมเป็น 2D แต่ใช้มุมมองในเกมเป็น 
-                        First-person จะให้ความรู้สึกว่ากำลังเล่นเกม 3D <br><br>
-                    </div>
-                    <div class="text s12">ㆍRole: Start to finish Project</div>
-                    <div class="text s12">ㆍUsing Adobe Animate and Action Script 3.0</div>
+                    <div class="text header">Health Bar Script</div>
+                    <div class="text s12">ㆍRole: UI Design and Develop Frontend/Backend Script</div>
+                    <div class="text s12">ㆍUsing Lua, Javascript, Html, Css, GIMP and Photo Scape X</div>
                     <br>
+                </div>
+                <div class="elementor-widget-wrap"><iframe src="https://drive.google.com/file/d/1nuECB4fG84sgBXh0fwol_iKrfJ4SdMHB/preview"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12">ㆍ UI Design via GIMP and Photo Scape X</div>
+                    <div class="text s12">ㆍ Frontend Development via Html and Css.</div>
+                    <div class="text s12">ㆍ Backend Development via Javascript and Lua.</div>
                 </div>
             </div>
         </div>
         <!-- =====================================================================================================-->
 
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
 
         <!-- =====================================================================================================-->
         <div class="row">
             <div class="image-box wide">
                 <div class="text-content">
-                    <div class="text s16">Preview<br><br></div>
+                    <div class="text header">Scoreboard Script</div>
+                    <div class="text s12">ㆍRole: UI Design and Develop Frontend/Backend Script</div>
+                    <div class="text s12">ㆍUsing Lua, Javascript, Html, Css, GIMP and Photo Scape X</div>
+                    <br>
                 </div>
-
-                <iframe width="850" height="650" src="https://www.youtube.com/embed/a-U3RDo_lYY" title="SPBF - Story Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
+                <div class="elementor-widget-wrap"><iframe src="https://drive.google.com/file/d/1Y-7EMo_O3Q0fO5ETh_Bbvj_TpNlS7ICM/preview"
+                    width="850" height="600" style="border:none;overflow:hidden;border-radius: 15px;" scrolling="no" frameborder="0" allowfullscreen="true"  allow="autoplay"></iframe>
+                </div>
+                <div class="text-content">
+                    <div class="text s12">ㆍ UI Design via GIMP and Photo Scape X</div>
+                    <div class="text s12">ㆍ Frontend Development via Html and Css.</div>
+                    <div class="text s12">ㆍ Backend Development via Javascript and Lua.</div>
+                </div>
             </div>
         </div>
         <!-- =====================================================================================================-->
+
+        <hr style="border: 2px solid rgb(236, 236, 236); width: 70%; margin-top: 50px; margin-bottom: 50px;">
+
+        <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+        <div class="row">
+            <div class="image-box high">
+                <div class="text-content">
+                    <div class="text header">Restart Noti Script</div>
+                    <div class="text s12">ㆍRole: Backend Development</div>
+                    <div class="text s12">ㆍUsing Lua and Python</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/mgmmJ60m/noti.png">
+                <div class="text-content">
+                    <div class="text s10">ㆍ Notify to discord webhook <br>when server is online via Lua.</div>
+                    <div class="text s10">ㆍ Send message to discord channel <br>when discord webhook notify via Python.</div>
+                </div>
+            </div>
+            <div class="image-box high">
+                <div class="text-content">
+                    <div class="text header">Discord RCP Script</div>
+                    <div class="text s12">ㆍRole: Backend Development</div>
+                    <div class="text s12">ㆍUsing Lua</div>
+                    <br>
+                </div>
+                <img src="https://i.postimg.cc/mgmmJ60m/noti.png">
+                <div class="text-content">
+                    <div class="text s10">ㆍ Create Discord Rich Presence via Lua.</div>
+                    <div class="text s10">ㆍ Create Discord Link Button via Lua.</div>
+                </div>
+            </div>
+        </div>
+        <!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
 
 
     </div>
