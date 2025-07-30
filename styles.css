@@ -33,6 +33,81 @@ img.emoji {
     min-height: 800px;
 }
 
+.buttonMini {
+    display: inline-block;
+    padding: 15px 15px;
+    background-color: black;
+    color: white;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
+
+}
+
+.buttonMini:hover {
+    transform: scale(0.95);
+    background-color: rgb(0, 136, 255);
+    color: black;
+}
+
+
+
+.button {                
+    border: none;
+    border-radius: 25px; 
+    color: rgb(45, 45, 45);
+    padding: 1vw 1vw;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 40px auto;
+    cursor: pointer;
+    width: 70vw;
+    max-width: 800px;
+    min-width: 700px; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttonHalf {
+    width: 15vw;
+    max-width: 350px;
+    min-width: 350px;
+    font-size: 1.5vw;
+    font-weight: 90;
+    display: inline-flex;
+    margin: 10px 10px; 
+}
+
+
+.button:active {background-color: #000000;transform: scale(0.90); }
+.buttonHalf:active {background-color: #000000;transform: scale(0.90); }
+
+
+.button1:hover {background-color: #0084ff; color: rgb(255, 255, 255); transform: scale(0.95); }
+.button1 {background-color: #000000;color: rgb(255, 255, 255);}
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    flex-wrap: wrap; /* อนุญาตให้ปุ่มตกลงบรรทัดใหม่ถ้าจอเล็กเกินไป */
+    padding-top: 20px;
+}
+
+
+
+
 @media only screen and (min-width: 1200px) {
     .page-content { border-radius: 70px; }
     .animated-section,
@@ -42,15 +117,17 @@ img.emoji {
 }
 
 body,
-p,
+p, p1,
 .elementor .elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description {
     font-family: "Poppins", Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 400;
     font-style: normal;
     line-height: 1.75em;
     color: #d5d5d5;
 }
+p1 {color: #ffffff; font-weight: 500;}
+
 
 .form-control,
 .form-control:focus,
@@ -67,9 +144,7 @@ h1, h2, h3, h4, h5, h6, h00 {
 }
 
 .logo-text,
-.logo-symbol {
-    font-family: "Poppins", Helvetica, sans-serif;
-}
+.logo-symbol {font-family: "Poppins", Helvetica, sans-serif;}
 
 h1 {
     font-size: 32px;
@@ -436,4 +511,18 @@ input[type="submit"],
 
 #skill-blue.skill-container {
     border-color: #37b9ff;
+}
+
+
+.name::before {
+  margin-right: 8px; /* ระยะห่างระหว่างสัญลักษณ์และข้อความ */
+}
+.email::before {
+  content: "📧 "; /* สัญลักษณ์อีเมล */
+}
+.phone::before {
+  content: "📞 "; /* สัญลักษณ์โทรศัพท์ */
+}
+.address::before {
+  content: "📍 "; /* สัญลักษณ์ตำแหน่ง */
 }
