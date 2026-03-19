@@ -3,123 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thatchon Mukpradab</title>
+    <title>Thatchon M.</title>
     <link rel="icon" href="https://i.postimg.cc/Pq8yPxsT/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-	<style>
-		/* --- บรรทัดของการจัดหน้าหลัก (Root & Layout) --- */
-		:root { --bg-outer: #0a0a0c; --bg-main: #16161e; --bg-card: #1f1f2b; --border: #2d2d3d; --pastel-purple: #00ffb7; --pastel-blue: #89cff0; --text-white: #ffffff; --text-dim: #9494a3; --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1); --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-		* { box-sizing: border-box; margin: 0; padding: 0; }
-		body { background-color: var(--bg-outer); font-family: 'Inter', sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; color: var(--text-white); overflow: hidden; }
-		.master-container { position: relative; display: flex; width: 90vw; height: 90vh; padding: 25px; gap: 20px; background-color: var(--bg-main); border-radius: 50px; border: 1px solid var(--border); }
-		.sidebar-wrapper { display: flex; flex-direction: column; width: 280px; gap: 15px; }
-		.main-display { position: relative; flex: 1; padding: 40px; background: var(--bg-card); border-radius: 45px; border: 1px solid var(--border); overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(0, 0, 0, 0) transparent; }
-		.main-display::-webkit-scrollbar { width: 10px; height: 10px; }
-		.main-display::-webkit-scrollbar-track { background: transparent; margin: 15px; }
-		.main-display::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0); border-radius: 20px; background-clip: padding-box; transition: all var(--transition-base); }
-		.pixel-font { font-family: 'Silkscreen', sans-serif !important; image-rendering: pixelated; -webkit-font-smoothing: none; letter-spacing: 0.5px; }
-		.page { display: none; animation: fadeIn 0.4s forwards; }
-		.page.active { display: block; }
-		@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-		/* --- ค่าของ Thatchon Mukpradab Software Developer (Profile Card) --- */
-		.profile-card { padding: 20px; background: var(--bg-card); border-radius: 35px; border: 1px solid var(--border); text-align: center; }
-		.avatar { width: 60px; height: 60px; margin: 0 auto 15px; background: url('https://i.postimg.cc/SxN0RnG9/00.png') center/cover; border-radius: 50%; border: 2px solid var(--pastel-purple); }
-		.name-title h2 { font-size: 16px; font-weight: 400; }
-		.name-title p { font-size: 11px; color: var(--pastel-blue); margin-top: 6px; }
-
-		/* --- ค่าของเมนู (Nav Card) --- */
-		.nav-card { display: flex; flex-direction: column; flex: 1; padding: 20px 15px; gap: 6px; background: var(--bg-card); border-radius: 40px; border: 1px solid var(--border); }
-		.nav-item { position: relative; display: flex; align-items: center; padding: 12px 18px; gap: 12px; color: var(--text-dim); text-decoration: none; border-radius: 20px; cursor: pointer; transition: all var(--transition-base); overflow: hidden; font-size: 13px; }
-		.nav-item:hover { background: rgba(180, 169, 255, 0.08); color: var(--pastel-purple); transform: translateX(8px); }
-		.nav-item.active { background: rgba(180, 169, 255, 0.15); color: var(--pastel-purple); font-weight: 400; }
-		.nav-item::before { content: ""; position: absolute; left: 0; width: 3px; height: 0; background: var(--pastel-purple); border-radius: 0 5px 5px 0; transition: 0.3s; }
-		.nav-item:hover::before, .nav-item.active::before { height: 60%; }
-
-		/* --- ค่าของ © 2026 Thatchon Mukpradab (Footer Card) --- */
-		.footer-card { padding: 20px; background: var(--bg-card); border-radius: 30px; border: 1px solid var(--border); text-align: center; font-size: 11px; color: var(--text-dim); line-height: 1.8; }
-
-		/* --- ค่าของเนื้อหาแต่ละหน้า (Resume, Portfolio, etc.) --- */
-		.portfolio-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; }
-		.portfolio-header h1 { font-family: 'Silkscreen'; font-size: 35px; font-weight: 200; letter-spacing: -1px; }
-		.resume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-		.block-title h2 { font-size: 25px; color: var(--pastel-purple); margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-		
-		/* Resume Specific */
-		.experience-timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 25px; position: relative; }
-		.res-item-wrapper { transition: all var(--transition-base); padding: 20px; margin-left: -20px; margin-right: -10px; border-radius: 16px; border: 1px solid transparent; position: relative; }
-		.timeline-dot { width: 12px; height: 12px; background: var(--pastel-purple); border-radius: 50%; position: absolute; left: -13px; top: 27px; box-shadow: 0 0 10px var(--pastel-purple); z-index: 1; }
-		.res-date { font-size: 14px; color: var(--text-dim); font-weight: 700; text-transform: uppercase; padding-top: 6px; }
-		.company-name { color: var(--pastel-purple); margin: 0 0 15px 0; font-size: 1.2rem; }
-		.res-role { color: var(--pastel-blue); font-size: 15px; font-weight: 500; margin-bottom: 2px; }
-		.res-desc p { margin-bottom: 8px; line-height: 1.4; color: var(--text-dim); }
-		.res-item { display: grid; grid-template-columns: 150px 1fr; gap: 25px; margin-bottom: 45px; }
-		.res-info h4 { font-size: 22px; color: #fff; margin-bottom: 6px; }
-
-		/* Portfolio Specific */
-		.filter-btn { position: relative; padding: 8px 10px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 14px; color: var(--text-dim); font-size: 12px; font-family: 'Silkscreen', sans-serif; font-weight: 400; cursor: pointer; overflow: hidden; transition: all var(--transition-bounce); }
-		.filter-btn.active { background: var(--pastel-purple); color: var(--bg-outer); border-color: var(--pastel-purple); font-weight: 400; box-shadow: 0 8px 20px rgba(169, 255, 212, 0.499), 0 0 15px rgba(180, 169, 255, 0.2); }
-		.filter-buttons { display: flex; gap: 10px; }
-		.filter-btn:hover { transform: translateY(-2px); border-color: var(--pastel-purple); color: var(--text-white); background: rgba(0, 255, 183, 0.1); }
-		.portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-		.project-card { background: rgba(255,255,255,0.02); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; transition: all var(--transition-bounce); cursor: pointer; display: flex; flex-direction: column; }
-		.project-card:hover { transform: translateY(-8px); border-color: var(--pastel-blue); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
-		.project-img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #16161e; }
-		.project-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-		.project-card:hover .project-img-wrapper img { transform: scale(1.1); }
-		.project-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
-		.project-info h4 { font-size: 17px; font-weight: 500; }
-
-		/* Project Specific */
-		.experience-timeline {transition: all 0.3s ease;}
-		.experience-timeline:hover .res-item-wrapper {opacity: 0.5; filter: blur(0.5px);}
-		.res-item-wrapper {transition: all var(--transition-base); padding: 20px; margin-left: -20px; margin-right: -10px; border-radius: 16px; border: 1px solid transparent;}
-		.res-item-wrapper:hover {opacity: 1 !important; filter: blur(0px) !important; background: rgba(255, 255, 255, 0.03); border-color: rgba(0, 255, 183, 0.1); transform: translateY(-2px);}
-		.res-item-wrapper:hover .company-name {color: var(--text-white); transition: color 0.3s ease;}
-		.res-item-wrapper:hover .timeline-dot {box-shadow: 0 0 15px var(--pastel-purple); transform: scale(1.2);}
-
-		/* Skills & Tags */
-		.skills-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 35px; }
-		.skills-list li { background: rgba(180, 169, 255, 0.08); border: 1px solid var(--border); padding: 5px 12px; border-radius: 12px; font-size: 15px; color: var(--text-white); }
-		.tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-		.tag-item { background: rgba(0, 255, 183, 0.1); color: var(--pastel-purple); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; transition: var(--transition-base); }
-		.tag-item:hover { background: rgba(0, 255, 183, 0.2); transform: translateY(-2px); }
-
-		/* CV & Specific */
-		.cv-preview-container { width: 100%; max-width: 500px; }
-		.cv-iframe { border: none; overflow: hidden; border-radius: 20px; background: var(--bg-main); display: block; height: 650px !important; width: 100%; }
-		.btn-download-cv { display: inline-flex; width: auto; background: var(--pastel-purple); color: var(--bg-outer) !important; padding: 15px 30px; border-radius: 15px; text-decoration: none; font-weight: 500; gap: 10px; margin-bottom: 30px; transition: all var(--transition-bounce); border: 1px solid transparent; }
-		.btn-download-cv:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 255, 183, 0.2); filter: brightness(1.1); color: var(--bg-outer) !important; }
-
-		/* AboutMe & Specific */
-		.linkedin-badge-container { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 30px; border: 1px solid var(--border); display: flex; justify-content: center; align-items: flex-start; min-height: 520px; overflow: hidden; }
-		.contact-info-list { list-style: none; }
-		.contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: var(--text-dim); }
-		.contact-item i { color: var(--pastel-purple); }
-		.contact-item h5 { font-size: 15px; font-weight: 400; color: var(--text-white); }
-
-		/* Modal / Overlay */
-		.project-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); z-index: 1000; backdrop-filter: blur(10px); }
-		.modal-content { position: relative; width: 90%; height: 90%; background: var(--bg-main); border-radius: 40px; border: 1px solid var(--border); overflow: hidden; }
-		.close-modal { position: absolute; top: 25px; right: 25px; z-index: 1010; width: 45px; height: 45px; background: var(--bg-card); border-radius: 50%; border: 1px solid var(--border); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-		.close-modal:hover { background: #ff5f56; border-color: #ff5f56; }
-		iframe { width: 100%; height: 100%; border: none; }
-	</style>
+	<link rel="stylesheet" href="ResumeStyle.css">
 </head>
 
 <body>
 
     <div class="master-container">
-
         <div class="sidebar-wrapper">
-            <div class="profile-card">
-                <div class="avatar"></div>
-                <div class="name-title">
-                    <h2 class="pixel-font">Thatchon Mukpradab</h2>
-                    <p class="pixel-font">Software Developer</p>
-                </div>
-            </div>
+
+			<div class="profile-card profile-info-group">
+				<div class="name-wrapper">
+					<div class="avatar" style="width: 60px; height: 60px; margin: 0; flex-shrink: 0; border: 3px solid var(--pastel-green);"></div>
+					<div style="display: flex; flex-direction: column; line-height: 1.1;">
+						<p class="pixel-font glitch" data-text="THATCHON" style="font-size: 20px;">THATCHON</p>
+						<p class="pixel-font glitch" data-text="MUKPRADAB" style="font-size: 20px;">MUKPRADAB</p>
+					</div>
+				</div>
+				<div class="title-divider">
+					<p class="pixel-font glitch" data-text="SOFTWARE DEVELOPER" style="font-size: 15px; color: var(--pastel-blue); width: 100%; text-align: center;">SOFTWARE DEVELOPER</p>
+				</div>
+			</div>
+
             <nav class="nav-card">
                 <div class="nav-item pixel-font" data-target="resume-page"><i data-lucide="file-text"></i><span>Resume</span></div>
                 <div class="nav-item pixel-font" data-target="portfolio-page"><i data-lucide="layout-grid"></i><span>Portfolio</span></div>
@@ -285,6 +193,10 @@
                         <div class="project-img-wrapper"><img src="https://i.postimg.cc/nc25yHth/03-Video-Editing.png"></div>
                         <div class="project-info"><h4>Video Editing</h4></div>
                     </div>
+					<div class="project-card" data-cat="graphic" data-url="Motion Graphic.html">
+                        <div class="project-img-wrapper"><img src="https://i.postimg.cc/VNxHqvXD/08-Motion-Graphic.png"></div>
+                        <div class="project-info"><h4>Motion Graphic</h4></div>
+                    </div>
                     <div class="project-card" data-cat="program" data-url="Python Project.html">
                         <div class="project-img-wrapper"><img src="https://i.postimg.cc/jdtm3Dm1/04-Python-Project.png"></div>
                         <div class="project-info"><h4>Python Project</h4></div>
@@ -300,14 +212,14 @@
                     <div class="project-card" data-cat="program" data-url="Hero Guide.html">
                         <div class="project-img-wrapper"><img src="https://i.postimg.cc/6p1PQYqs/06-Hero-Guide.png"></div>
                         <div class="project-info"><h4>Hero Guide</h4></div>
+                    </div>					
+					<div class="project-card" data-cat="program" data-url="Github.html">
+                        <div class="project-img-wrapper"><img src="https://i.postimg.cc/sDG2323Z/10-Github.png"></div>
+                        <div class="project-info"><h4>Github</h4></div>
                     </div>
                     <div class="project-card" data-cat="program" data-url="Analysis.html">
                         <div class="project-img-wrapper"><img src="https://i.postimg.cc/SK2vYCYn/07-Analysis.png"></div>
                         <div class="project-info"><h4>Analysis</h4></div>
-                    </div>
-                    <div class="project-card" data-cat="graphic" data-url="Motion Graphic.html">
-                        <div class="project-img-wrapper"><img src="https://i.postimg.cc/VNxHqvXD/08-Motion-Graphic.png"></div>
-                        <div class="project-info"><h4>Motion Graphic</h4></div>
                     </div>
                     <div class="project-card" data-cat="program" data-url="SitP.html">
                         <div class="project-img-wrapper"><img src="https://i.postimg.cc/tJySccS6/SitP.png"></div>
@@ -455,13 +367,13 @@
 						<div class="block-title"><h2>Linkedin</h2></div>
 						<div class="linkedin-badge-container">
 							<div class="badge-base LI-profile-badge" 
-								data-locale="th_TH" 
-								data-size="large" 
-								data-theme="dark" 
-								data-type="VERTICAL" 
-								data-vanity="tatchon-mookpradab" 
-								data-version="v1"
-								style="min-height: 50px !important; display: block;">
+								data-locale ="th_TH" 
+								data-size   ="large" 
+								data-theme  ="dark" 
+								data-type   ="VERTICAL" 
+								data-vanity ="thatchon-mukpradab" 
+								data-version="v1">
+								<a></a>
 							</div>
 						</div>
 						<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
@@ -499,75 +411,8 @@
         </div>
     </div>
 
-	<script>
-		lucide.createIcons();
-
-		const overlay = document.getElementById('overlay');
-		const frame = document.getElementById('projectFrame');
-		const closeBtn = document.getElementById('closeBtn');
-		const projectCards = document.querySelectorAll('.project-card');
-
-		projectCards.forEach(card => {
-			card.onclick = () => {
-				const url = card.getAttribute('data-url');
-				frame.src = url;
-				overlay.style.display = 'flex';
-			};
-		});
-
-		closeBtn.onclick = () => {
-			overlay.style.display = 'none';
-			frame.src = "";
-		};
-
-		const navItems = document.querySelectorAll('.nav-item');
-		const pages = document.querySelectorAll('.page');
-
-		function navigateToPage() {
-			let hash = window.location.hash.replace('#', '') || 'resume';
-			const targetId = hash + '-page';
-			const targetPage = document.getElementById(targetId);
-
-			if (targetPage) {
-				pages.forEach(p => p.classList.remove('active'));
-				targetPage.classList.add('active');
-
-				navItems.forEach(item => {
-					item.classList.remove('active');
-					if (item.getAttribute('data-target') === targetId) {
-						item.classList.add('active');
-					}
-				});
-			}
-		}
-
-		navItems.forEach(item => {
-			item.onclick = () => {
-				const target = item.getAttribute('data-target');
-				window.location.hash = target.replace('-page', ''); 
-			};
-		});
-
-		window.addEventListener('hashchange', navigateToPage);
-		window.addEventListener('DOMContentLoaded', () => {
-			if (!window.location.hash) { window.location.hash = 'resume'; }
-			navigateToPage();
-		});
-
-		const filterBtns = document.querySelectorAll('.filter-btn');
-		filterBtns.forEach(btn => {
-			btn.onclick = () => {
-				filterBtns.forEach(b => b.classList.remove('active'));
-				btn.classList.add('active');
-				const filter = btn.getAttribute('data-filter');
-				projectCards.forEach(card => {
-					card.style.display = (filter === 'all' || card.getAttribute('data-cat') === filter) ? 'flex' : 'none';
-				});
-			};
-		});
-
-		document.querySelectorAll('#project-page .res-item-wrapper').forEach(card => { card.onclick = () => { const url = card.getAttribute('data-url'); if(url) window.open(url, '_blank'); }; card.style.cursor = 'pointer'; });
-	</script>
+	<script src="ResumeScript.js"></script>
+	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 </body>
 </html>
