@@ -102,9 +102,108 @@ body { background-color: var(--bg-outer); font-family: 'Inter', sans-serif; heig
 .contact-item i { color: var(--pastel-green); }
 .contact-item h5 { font-size: 15px; font-weight: 400; color: var(--text-white); }
 
-/* Modal / Overlay */
-.project-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); z-index: 1000; backdrop-filter: blur(10px); }
+.project-overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: rgba(0,0,0,0.95); 
+    z-index: 1000; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    will-change: opacity;
+}
+
+/* เพิ่มคลาสนี้สำหรับตอนสั่งเปิด */
+.project-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 .modal-content { position: relative; width: 90%; height: 90%; background: var(--bg-main); border-radius: 40px; border: 1px solid var(--border); overflow: hidden; }
 .close-modal { position: absolute; top: 25px; right: 25px; z-index: 1010; width: 45px; height: 45px; background: var(--bg-card); border-radius: 50%; border: 1px solid var(--border); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
 .close-modal:hover { background: #ff5f56; border-color: #ff5f56; }
 iframe { width: 100%; height: 100%; border: none; }
+
+
+
+/* ========== Certified ========== */
+.cert-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 30px; 
+}
+.cert-card { 
+    background-color: rgba(255,255,255,0.02); 
+    border-radius: 25px; 
+    padding: 30px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    border: 1px solid var(--border);
+    transition: all var(--transition-bounce); 
+    
+    /* เพิ่มคำสั่งนี้เข้าไปครับ เพื่อบังคับให้การ์ดสูงเท่ากับเนื้อหาข้างในพอดี */
+    height: max-content; 
+}
+.cert-card:hover { 
+    transform: translateY(-8px); 
+    border-color: var(--pastel-green); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+}
+.cert-card h3 { 
+    text-align: center; 
+    font-size: 20px; 
+    font-weight: 500; 
+    margin: 0; 
+    color: var(--text-white); 
+    letter-spacing: 0.5px; 
+}
+.cert-card:hover h3 {
+    color: var(--pastel-green);
+    transition: color 0.3s ease;
+}
+
+.cert-media-container { 
+    width: 50%; 
+    aspect-ratio: 1.4; 
+    background-color: #16161e; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    position: relative; 
+    margin: 0 auto; 
+}
+
+.cert-media-container iframe { 
+    position: absolute; 
+    top: -55px; 
+    left: 0;
+    width: 100%; 
+    height: calc(100% + 55px); 
+    border: none; 
+}
+.btn-view { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: transparent; 
+    color: var(--text-white); 
+    border: 1px solid var(--pastel-green); 
+    padding: 12px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    font-size: 13px; 
+    transition: all 0.3s ease; 
+    
+    /* เปลี่ยนจาก margin-top: auto; เป็นการกำหนดระยะห่างตายตัวครับ */
+    margin-top: 10px; 
+}
+.btn-view:hover { 
+    background: var(--pastel-green); 
+    color: var(--bg-outer); 
+    box-shadow: 0 0 15px rgba(0, 255, 183, 0.4); 
+}
