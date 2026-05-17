@@ -8,14 +8,24 @@ const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
     card.onclick = () => {
         const url = card.getAttribute('data-url');
-        frame.src = url;
-        overlay.style.display = 'flex';
+        
+        // 1. สั่งเปิด Overlay ให้ Fade in ขึ้นมาก่อน
+        overlay.classList.add('active'); 
+        
+        // 2. หน่วงเวลา 300 มิลลิวินาที (รอให้หน้าต่างเด้งเสร็จ) แล้วค่อยดึงงานมาใส่ Iframe
+        setTimeout(() => {
+            frame.src = url;
+        }, 300); 
     };
 });
 
 closeBtn.onclick = () => {
-    overlay.style.display = 'none';
-    frame.src = "";
+    overlay.classList.remove('active'); 
+    
+    // รอให้หน้าต่างจางหายไปก่อน ค่อยเคลียร์ Iframe
+    setTimeout(() => {
+        frame.src = "";
+    }, 300); 
 };
 
 const navItems = document.querySelectorAll('.nav-item');
